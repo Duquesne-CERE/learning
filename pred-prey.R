@@ -23,5 +23,5 @@ for (i in 2:iter) {
       y[i] <- y[(i-1)] + dt * (y[(i-1)] * x[(i-1)] * pred_grow - y[(i-1)] * pred_deat)
 }
 
-plot(t,x, type = "l", ylab = "prey population", xlab = "time")
-plot(t,y, type = "l", ylab = "predator population", xlab = "time")
+plot(t,x, type = "l", ylab = "prey population", xlab = "time", ylim = c(0,15), xlim = c(0,100))
+plot(t,y, type = "l", ylab = "predator population", xlab = "time", ylim = c(0,5), xlim = c(0,100))

@@ -11,19 +11,23 @@ actual_mes <- ebbr$Latent.Heat.Flux..daytime..W.m.2.
 # set the start date with <- as.Date("1953-6-1")
 start <- as.Date("1953-6-1", origin = "1970-01-01")
 end <- as.Date("2004-10-09", origin = "1970-01-01")
-
-
-
 day <- array(0, dim = (end-start+1))
+e_p <- array(0, dim = (end-start+1))
 for (i in 1:(end-start+1)) {
-      
       day[i] <- start + i - 1
-      
       dom <- mday(as.Date(day[i], origin = "1970-01-01"))
       mon <- month(as.Date(day[i], origin = "1970-01-01"))
       year <- year(as.Date(day[i], origin = "1970-01-01"))
       
-      match(pan$YEARMO,(100*year+month))
-      
+      s <- match(pan$Year,year)
+      r <- match(pan$Month,mon)
+      for (j in (1:(length(s)))) {
+            if ((is.na(s[j])==FALSE) && (is.na(r[j])==FALSE)) {
+                  index <- j
+                  #} else {
+                  # this is where the else result would be
+            }
+      }
+      e_p[i] <- pan[[(3+(2*dom))]][index]
 }
 

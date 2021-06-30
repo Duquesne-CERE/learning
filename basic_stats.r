@@ -3,8 +3,12 @@ library(readr)
 
 # Read data, perform basic statistics and visualization
 
-setwd("c:/Users/kahlerd/Downloads/")
+# use file chooser:
+file <- file.choose()
+data <- read_csv(file)
 
+# find file in correct directory (most useful for repeat 
+setwd("c:/Users/kahlerd/Downloads/")
 data <- read_csv("2622217.csv")
 data_test <- read.csv("2622217.csv")
 

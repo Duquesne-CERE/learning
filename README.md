@@ -15,3 +15,4 @@ More useful information at: https://github.com/hydro-lab
 Try out the example scripts in this repository and:
 https://learn.datacamp.com/
 
+disasters <- read_csv("https://duq.box.com/shared/static/48g71l89th4prmlnmp5wupkksaf29gzy.csv", skip = 6, col_names = TRUE, col_types = "ciifffffcfffffccfffccnnfcccciiiiiiiiiiinnnn")
